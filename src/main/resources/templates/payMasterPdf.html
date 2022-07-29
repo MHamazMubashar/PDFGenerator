@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" media="all" href="style.css"/>
+    <title>Sample</title>
+    <style type="text/css">
+        div.header {
+            position: running(header);
+            border-bottom: 1px solid black;
+            margin-bottom: 30px;
+            padding-bottom:10px;
+            margin-top:10px;
+        }
+        div.footer {
+            position: running(footer);
+            border-top: 1px solid black;
+        }
+        div.content {
+            text-align: justify;
+        }
+        @page {
+            @bottom-right {
+                content: element(footer);
+                vertical-align: top;
+                padding-top: 10px;
+            }
+            @top-right {
+                content: element(header);
+                vertical-align: top;
+                padding-bottom: 10px;
+            }
+            margin-top: 2.0cm;
+            margin-left:1.5cm;
+            margin-right:1.5cm;
+            margin-bottom:2.0cm;
+        }
+
+        #pagenumber:before {
+            content: counter(page);
+        }
+
+        #pagecount:before {
+            content: counter(pages);
+        }
+
+    </style>
+</head>
+<body>
+<div class="header">
+    <div>
+
+        Sample
+    </div>
+</div>
+<div class="footer" >
+    <div style="margin-top: 3px">
+        <h5 style="display:inline-block;">Private and Confidential</h5>
+        <p style="display:inline-block;float:right;"><span>Page <span id="pagenumber"></span> of <span id="pagecount"></span></span></p>
+    </div>
+
+</div>
+<div class="content " >
+    Sample Test
+</div>
+
+</body>
+</html>
